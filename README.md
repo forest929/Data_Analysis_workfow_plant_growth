@@ -72,6 +72,20 @@ df['Treatment'] = df['Treatment'].str.strip().str.lower()
 ```
 * Verify categories match planned treatment groups.
 
+**Date Data**
+* Convert the date values to `datetime` format:
+```python
+df['Date'] = pd.to_datetime(df['Date])
+```
+* Once in `datetime` format, you can easily extract components such as year, month or day
+```python
+# Create columns for the year and month
+df['Year']= df['Date'].dt.year
+df['Month']= df['Date'].dt.month
+```
+* This makes it easier to group or filter data by specific time periods (e.g. seasonal or monthly trends)
+
+
 > **Tip – Spotting Data Errors with Quick Graphs:**  
 > * You can often detect data issues by making quick visualisations, either in Excel Pivot Tables, Prism GraphPad, or Python (`matplotlib`).  
 > * For example, when plotting means with error bars (based on at least 3–4 replicates per measurement), unusually large error bars can signal problems.  
@@ -100,25 +114,33 @@ plt.show()
 ## 7. Statistic Analysis & Data Visualisation
 
 **Statistical Analysis**
-  - Perform statistical tests (e.g., ANOVA) to compare treatments.
-  - Follow up with post-hoc tests if needed.
+* Perform statistical tests (e.g., ANOVA) to compare treatments.
+* Follow up with post-hoc tests if needed.
 
 **Time-Series Analysis (Line Plots)**
-  - Build growth curves over time.
-  - Track flowering and fruiting trends:
-    - Identify when flowering begins.
-    - Determine time gap between first flowers and first fruits (e.g., fruiting starts ~2 weeks after first flowers).
-    - Compare treatments for earlier/later flowering or fruiting times.
-    - Map fruiting season duration (e.g., strawberries).
+> **Note**: Before plotting time-series data, convert your date column to the `datetime` format and extract components like year or month.
+> This ensures accurate ordering on the x-axis and makes it easier to group data by time periods.
+> (See  **Section 4 - Cleaning data: Date Data** for code examples)
+* Build growth curves over time.
+* Track flowering and fruiting trends:
+  * Identify when flowering begins.
+  * Determine time gap between first flowers and first fruits (e.g., fruiting starts ~2 weeks after first flowers).
+* Compare treatments for earlier/later flowering or fruiting times.
+* Map fruiting season duration (e.g., strawberries).
 
 **Distribution and Comparison Plots (Bar/Box/Violin Plots)**
-  - **Environmental variables**: temperature, relative humidity, light intensity.
-  - **Soil conditions**: soil water %, soil temperature, soil electrical conductivity (EC).
-  - **Fruit quality & yield metrics**: individual fruit mass, Brix measurements (sweetness).
+> **Note:** Before creating these plots, you may need to reshape your dataset.  
+> Common methods in `pandas` include:
+> - `pivot_table()` – to summarise data in a matrix form suitable for plotting grouped values.
+> - `melt()` – to transform wide-format data into long format for libraries like Seaborn or Matplotlib.
+
+  * **Environmental variables**: temperature, relative humidity, light intensity.
+  * **Soil conditions**: soil water %, soil temperature, soil electrical conductivity (EC).
+  * **Fruit quality & yield metrics**: individual fruit mass, Brix measurements (sweetness).
 
 **Final Outputs**
-  - Prepare publication-ready figures (consistent formatting, labels, and legends).
-  - Create concise summary tables for reports or manuscripts.
+* Prepare publication-ready figures (consistent formatting, labels, and legends).
+* Create concise summary tables for reports or manuscripts.
 
 
 
