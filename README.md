@@ -43,6 +43,8 @@
 ### In Python (`pandas`)
 **Numeric data**:
 ```python
+df.head()
+df.tail()
 df.shape        # number of rows and columns
 df.info()       # column data types, missing values
 df.columns      # list of column names
@@ -94,13 +96,29 @@ plt.show()
 * Plot distributions to confirm data quality before statistical analysis.
 
 
-## 7. Next Steps
-* Run statistical tests (e.g., ANOVA) to compare treatments.
 
-* Build growth curves over time.
+## 7. Statistic Analysis & Data Visualisation
 
-* Prepare publication-ready plots and summary tables.
+**Statistical Analysis**
+  - Perform statistical tests (e.g., ANOVA) to compare treatments.
+  - Follow up with post-hoc tests if needed.
 
+**Time-Series Analysis (Line Plots)**
+  - Build growth curves over time.
+  - Track flowering and fruiting trends:
+    - Identify when flowering begins.
+    - Determine time gap between first flowers and first fruits (e.g., fruiting starts ~2 weeks after first flowers).
+    - Compare treatments for earlier/later flowering or fruiting times.
+    - Map fruiting season duration (e.g., strawberries).
+
+**Distribution and Comparison Plots (Bar/Box/Violin Plots)**
+  - **Environmental variables**: temperature, relative humidity, light intensity.
+  - **Soil conditions**: soil water %, soil temperature, soil electrical conductivity (EC).
+  - **Fruit quality & yield metrics**: individual fruit mass, Brix measurements (sweetness).
+
+**Final Outputs**
+  - Prepare publication-ready figures (consistent formatting, labels, and legends).
+  - Create concise summary tables for reports or manuscripts.
 
 
 
