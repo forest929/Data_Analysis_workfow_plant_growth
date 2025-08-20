@@ -113,11 +113,11 @@ plt.show()
 
 ## 7. Statistic Analysis & Data Visualisation
 
-**Statistical Analysis**
+### Statistical Analysis
 * Perform statistical tests (e.g., ANOVA) to compare treatments.
 * Follow up with post-hoc tests if needed.
 
-**Time-Series Analysis (Line Plots)**
+### Time-Series Analysis (Line Plots)
 > **Note**: Before plotting time-series data, convert your date column to the `datetime` format and extract components like year or month.
 > This ensures accurate ordering on the x-axis and makes it easier to group data by time periods.
 > (See  **Section 4 - Cleaning data: Date Data** for code examples)
@@ -128,7 +128,7 @@ plt.show()
 * Compare treatments for earlier/later flowering or fruiting times.
 * Map fruiting season duration (e.g., strawberries).
 
-**Distribution and Comparison Plots (Bar/Box/Violin Plots)**
+### Distribution and Comparison Plots (Bar/Box/Violin Plots)
 > **Note:** Before creating these plots, you may need to reshape your dataset.  
 > Common methods in `pandas` include:
 > - `pivot_table()` – to summarise data in a matrix form suitable for plotting grouped values.
@@ -138,7 +138,7 @@ plt.show()
   * **Soil conditions**: soil water %, soil temperature, soil electrical conductivity (EC).
   * **Fruit quality & yield metrics**: individual fruit mass, Brix measurements (sweetness).
 
-**Final Outputs**
+### Final Outputs
 * Prepare publication-ready figures (consistent formatting, labels, and legends).
 * Create concise summary tables for reports or manuscripts.
 
